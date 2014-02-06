@@ -9,7 +9,7 @@ var map = new google.maps.Map(map_div, mapOptions);
 
 
   function initialize(){
-    
+
 var coordinates = [];
 
 var minutes = 10;
@@ -55,8 +55,6 @@ function get_midpoint(){
 
 
     var i = 0
-    find_max_distance();
-    console.log(distances_array);
 
 
     var UrbanDistanceUI = function(mapnificent, that, $, window, undefined){
@@ -221,35 +219,4 @@ $(document).ready(function(){
 
 
 
-distances_array = []
 
-
-function callback(response, status){
-  var distance = response.rows[0].elements[0].distance.text;
-  var parsed_distance = distance.match(/\d*[.]\d*/g)
-  if (parsed_distance === null) {
-    parsed_distance = distance.match(/\d+/g);
-  }
-  var distance_float = parseFloat(parsed_distance[0])
-  distances_array.push(distance_float);
-}
-
-function find_max_distance(){
-  $.each(coordinates_array, function(index, coordinates){
-    var coordinates = coordinates;
-    $.each(coordinates_array, function(index, other_coordinates){
-      var origin = new google.maps.LatLng(coordinates.latitude, coordinates.longitude)
-      var destination = new google.maps.LatLng(other_coordinates.latitude, other_coordinates.longitude);
-      var service = new google.maps.DistanceMatrixService();
-      service.getDistanceMatrix(
-        {
-          origins: [origin],
-          destinations: [destination],
-          travelMode: google.maps.TravelMode.WALKING,
-          unitSystem: google.maps.UnitSystem.METRIC,
-          avoidHighways: false,
-          avoidTolls: false
-        }, callback);
-    });
-  });
-}
