@@ -103,7 +103,7 @@ function get_midpoint(){
             minutes +=5;
             mapnificent.destroy();
             $('iframe').remove();
-            initialize();
+            //initialize();
           }
           else {
             var coordinate_string = get_midpoint();
@@ -123,11 +123,8 @@ function get_midpoint(){
 
       mapnificent = Mapnificent(options);
       mapnificent.addLayer("urbanDistance", UrbanDistanceUI);
-      mapnificent.bind("initDone", function(){
-        // mapnificent.hide();
-      });
 
-      mapnificent.addToMap(map);
+      mapnificent.addToMap(my_map);
     });
   };
 };
@@ -155,13 +152,11 @@ function My_Location(latitude, longitude){
     
 function addAutocomplete(location){
   $(location).geocomplete().bind("geocode:result", function(event, result){
-    var latitude = result.geometry.location.d;
-    var longitude = result.geometry.location.e;
     $('#search-midpoint').click(function(){
       coordinates_array.push(new My_Location(result.geometry.location.d, result.geometry.location.e));
       activity = $('.activity').val();
       initialize();
-;    })
+    })
     console.log(coordinates_array);
   });
 }
@@ -171,13 +166,13 @@ function addAutocomplete(location){
 $(document).ready(function(){
 
 map_div = $('#map')[0]
-mapOptions = {
+my_mapOptions = {
   mapTypeId: google.maps.MapTypeId.ROADMAP,
   zoom: 12,
   center: new google.maps.LatLng(40.7577, -73.9857)
 };
 
-map = new google.maps.Map(map_div, mapOptions);
+my_map = new google.maps.Map(map_div, my_mapOptions);
 
 
 
