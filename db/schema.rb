@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(:version => 20140204202100) do
 
   create_table "locations", :force => true do |t|
-    t.float    "long"
-    t.float    "lat"
+    t.float    "long",       :null => false
+    t.float    "lat",        :null => false
     t.string   "tag"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

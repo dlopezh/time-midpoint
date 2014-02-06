@@ -71,5 +71,7 @@ module TimeMidpoint
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+
+    config.serve_static_assets = true
   end
 end
