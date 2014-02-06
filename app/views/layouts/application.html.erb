@@ -8,6 +8,9 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "application" %>
+    <script src="/jquery.geocomplete.min.js"></script>
+    <script src="/mapnificent.js"></script>
+    <script src="/newMain.js"></script>
   </head>
   <%if current_page?('/landing')%>
   <body class='<%="landing-background"%>'>
