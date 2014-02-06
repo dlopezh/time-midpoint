@@ -49,7 +49,6 @@ function get_midpoint(){
 
     var UrbanDistanceUI = function(mapnificent, that, $, window, undefined){
       that.bind("setup", function(){
-        alert('testing' + minutes + 'minutes');
         var intersect = that.getOption("intersect");
         that.setOption("intersection", true);
         console.log("setup complete");
