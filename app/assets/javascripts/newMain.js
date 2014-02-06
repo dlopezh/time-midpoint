@@ -7,7 +7,11 @@ var mapOptions = {
 
 var map = new google.maps.Map(map_div, mapOptions);
 
+
+  function initialize(){
+    
 var coordinates = [];
+
 var minutes = 10;
 
 var mapnificent, urbanDistance, positions = {};
@@ -50,7 +54,6 @@ function get_midpoint(){
 
 
 
-  function initialize(){
     var i = 0
     find_max_distance();
     console.log(distances_array);
@@ -120,7 +123,6 @@ function get_midpoint(){
             mapnificent.destroy();
             $('#map').remove();
             $('iframe').remove();
-            YELP(coordinate_string, activity)();
           };
         };
       };
