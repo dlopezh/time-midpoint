@@ -1,14 +1,4 @@
-var map_div = $('#map')[0]
-var mapOptions = {
-  mapTypeId: google.maps.MapTypeId.ROADMAP,
-  zoom: 12,
-  center: new google.maps.LatLng(40.7577, -73.9857)
-};
-
-var map = new google.maps.Map(map_div, mapOptions);
-
-
-  function initialize(){
+function initialize(){
 
 var coordinates = [];
 
@@ -181,6 +171,17 @@ function addAutocomplete(location){
 
 $(document).ready(function(){
 
+map_div = $('#map')[0]
+mapOptions = {
+  mapTypeId: google.maps.MapTypeId.ROADMAP,
+  zoom: 12,
+  center: new google.maps.LatLng(40.7577, -73.9857)
+};
+
+map = new google.maps.Map(map_div, mapOptions);
+
+
+
   addAutocomplete('.location');
 
    $('.add-friend').click(function(){
@@ -189,34 +190,4 @@ $(document).ready(function(){
 
 
 });
-
-
-
-
-
-
-
-
-
-
-
-// var inputs = $('.location')
-
-// coordinates_array = []
-
-// function fetchLocations(locationInputs){
-//   $.each(locationInputs, function(index, input){
-//     console.log(input);
-//     input = input.val();
-
-
-
-//   })
-// }
-
-
-// var friendLocation = $("#friend-location");
-
-
-
 
