@@ -163,6 +163,8 @@ function addAutocomplete(location){
 
   coordinates_array = []
 
+
+
 $(document).ready(function(){
 
 map_div = $('#map')[0]
